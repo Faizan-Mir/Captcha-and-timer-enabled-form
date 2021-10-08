@@ -1,5 +1,5 @@
 # Captcha-and-timer-enabled-form
-A Basic Form with Timer and Captcha Verification Enabled 
+A Basic Form with Timer and Captcha Verification Enabled <br>
 ----------------------------------------------------------------- <br>
 Make Sure that you download the two file named :  test.php and aelum.css and put both in the htdocs folder. <br>
 Also, dont forget to enable apache before accessing the test.php file through localhost/test.php in your browser. <br>
