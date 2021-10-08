@@ -1,36 +1,25 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
-* {
-  margin: 0;
-  padding: 0;
- 
-}
+
 
 body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 100;
   font-size: 12px;
-  line-height: 30px;
+  
   color: #777;
   
 }
-#notifications{
-	position: fixed;
-	top:100px; 
-	left:200px; 
-	color:red; 
-	
-	
-} 
+
 .container {
   max-width: 400px;
   width: 100%;
-  margin: 0 auto;
-  position: relative;
+  
+ 
 }
 
 #contact input[type="text"],
 #contact input[type="email"],
-#contact input[type="tel"],
+#contact input[type="date"],
 #contact input[type="url"],
 #contact textarea,
 #contact button[type="submit"] {
@@ -125,18 +114,5 @@ fieldset {
   border: 1px solid #aaa;
 }
 
-::-webkit-input-placeholder {
-  color: #888;
-}
 
-:-moz-placeholder {
-  color: #888;
-}
-
-::-moz-placeholder {
-  color: #888;
-}
-
-:-ms-input-placeholder {
-  color: #888;
 }

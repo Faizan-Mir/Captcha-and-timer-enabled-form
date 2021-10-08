@@ -36,17 +36,7 @@ DOB VARCHAR(20) NOT NULL,
 About_Yourself VARCHAR(1000) NOT NULL
 )');  
 
-
-
-
-
-
 ?>
-
-<center><h1> Time Left : </h1>
-
-<p id="time" >  </p>
-</center>
 <script>
 
 var i = 180;
@@ -61,12 +51,18 @@ function increment(){
      document.getElementById("time").innerHTML = Math.floor(i/60) + " : " + (i%60);
     if(i<1){
     myFunction(); 
+	alert('Time Over. Form will Disapper Now'); 
     clearInterval(interval);
   
     }
 }
 </script>
 
+<center><h1 style=" font-size:50px; color:'green';"> The Form will Disapper after: </h1>
+<br>
+<div id="time" style=" font-size:60px; color:'red';">  </div>
+</center>
+<center>
 <div class="container" id="FORM">  
   <form id="contact" action="test.php" method="post">
    <center> <h3>AELUM CONSULTANCY</h3>
@@ -79,7 +75,7 @@ function increment(){
       <input placeholder="Your Email Address" type="email" name="Email" tabindex="2" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Your Date of Birth" type="tel" name="DOB" tabindex="3" required>
+     Your Date of Birth  &nbsp; &nbsp; &nbsp; <input  type="date" name="DOB" tabindex="3" required>
     </fieldset>
    
     <fieldset>
@@ -94,7 +90,7 @@ function increment(){
 </fieldset>
 		
     <fieldset>
-      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      <button name="submit_btn" type="submit" id="contact-submit" >Submit</button>
     </fieldset>
 	
 	
@@ -103,9 +99,9 @@ function increment(){
   
   
 </div>
-
+</center>
 <?php
-if ($_POST) {
+if(isset($_POST['submit_btn'])) {
 	
 	$Email= $_POST["Email"]; 
 $Name= $_POST["Name"];
@@ -116,14 +112,14 @@ $About_Yourself= $_POST["About_Yourself"];
     $isHuman = $ExampleCaptcha->Validate();
     
     if (!$isHuman) {
-      echo "Wrong Captcha"; 
+      echo "<script> alert('Wrong Captcha') </script>"; 
     } else {
 		//Inserting data into our Table, only if the Captcha is Correct 
       $conn->query(" INSERT INTO formEntries(Name, Email, DOB, About_Yourself)
 VALUES ('$Name', '$Email', '$DOB', '$About_Yourself') 
 "); 
 
-     echo "<div id='notifications'>Your Responses have been Recorded and Saved in the formEntries Table of aelum Databse </div>"; 
+     echo "<script> alert('Your Responses have been Saved in the formEntries Table of aelum Databse') </script> "; 
     } 
   }
 
